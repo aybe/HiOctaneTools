@@ -874,6 +874,7 @@ namespace LevelInspector
             this.canvasBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.canvasBox.TabIndex = 1;
             this.canvasBox.TabStop = false;
+            this.canvasBox.MouseLeave += new System.EventHandler(this.canvasBox_MouseLeave);
             this.canvasBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseMove);
             this.canvasBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseUp);
             // 
