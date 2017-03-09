@@ -108,21 +108,21 @@ namespace LevelInspector
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // canvasBox
-            //
+            // 
             this.canvasBox.Location = new System.Drawing.Point(0, 0);
             this.canvasBox.Name = "canvasBox";
             this.canvasBox.Size = new System.Drawing.Size(512, 320);
             this.canvasBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.canvasBox.TabIndex = 0;
             this.canvasBox.TabStop = false;
-            this.canvasBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseDown);
+            this.canvasBox.MouseLeave += new System.EventHandler(this.canvasBox_MouseLeave);
             this.canvasBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseMove);
             this.canvasBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseUp);
-            //
+            // 
             // zoomInput
-            //
+            // 
             this.zoomInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zoomInput.Location = new System.Drawing.Point(83, 28);
             this.zoomInput.Maximum = new decimal(new int[] {
@@ -145,27 +145,27 @@ namespace LevelInspector
             0,
             0});
             this.zoomInput.ValueChanged += new System.EventHandler(this.zoomInput_ValueChanged);
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(80, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Zoom";
-            //
+            // 
             // settingsPanel
-            //
+            // 
             this.settingsPanel.Controls.Add(this.tableTabs);
             this.settingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsPanel.Location = new System.Drawing.Point(0, 0);
             this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(622, 621);
+            this.settingsPanel.Size = new System.Drawing.Size(634, 621);
             this.settingsPanel.TabIndex = 4;
-            //
+            // 
             // tableTabs
-            //
+            // 
             this.tableTabs.Controls.Add(this.entityTab);
             this.tableTabs.Controls.Add(this.columnTab);
             this.tableTabs.Controls.Add(this.blockTexTab);
@@ -175,11 +175,11 @@ namespace LevelInspector
             this.tableTabs.Location = new System.Drawing.Point(0, 0);
             this.tableTabs.Name = "tableTabs";
             this.tableTabs.SelectedIndex = 0;
-            this.tableTabs.Size = new System.Drawing.Size(622, 621);
+            this.tableTabs.Size = new System.Drawing.Size(634, 621);
             this.tableTabs.TabIndex = 15;
-            //
+            // 
             // entityTab
-            //
+            // 
             this.entityTab.Controls.Add(this.morphCheckbox);
             this.entityTab.Controls.Add(this.editEntityButton);
             this.entityTab.Controls.Add(this.entityTable);
@@ -190,13 +190,13 @@ namespace LevelInspector
             this.entityTab.Location = new System.Drawing.Point(4, 22);
             this.entityTab.Name = "entityTab";
             this.entityTab.Padding = new System.Windows.Forms.Padding(3);
-            this.entityTab.Size = new System.Drawing.Size(614, 595);
+            this.entityTab.Size = new System.Drawing.Size(626, 595);
             this.entityTab.TabIndex = 0;
             this.entityTab.Text = "Entities";
             this.entityTab.UseVisualStyleBackColor = true;
-            //
+            // 
             // morphCheckbox
-            //
+            // 
             this.morphCheckbox.AutoSize = true;
             this.morphCheckbox.Checked = true;
             this.morphCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -207,9 +207,9 @@ namespace LevelInspector
             this.morphCheckbox.Text = "morph areas";
             this.morphCheckbox.UseVisualStyleBackColor = true;
             this.morphCheckbox.CheckedChanged += new System.EventHandler(this.morphCheckbox_CheckedChanged);
-            //
+            // 
             // editEntityButton
-            //
+            // 
             this.editEntityButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editEntityButton.Enabled = false;
             this.editEntityButton.Location = new System.Drawing.Point(456, 2);
@@ -219,11 +219,11 @@ namespace LevelInspector
             this.editEntityButton.Text = "edit";
             this.editEntityButton.UseVisualStyleBackColor = true;
             this.editEntityButton.Click += new System.EventHandler(this.editEntityButton_Click);
-            //
+            // 
             // entityTable
-            //
-            this.entityTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.entityTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.entityTable.HideSelection = false;
             this.entityTable.Location = new System.Drawing.Point(0, 28);
@@ -237,9 +237,9 @@ namespace LevelInspector
             this.entityTable.KeyUp += new System.Windows.Forms.KeyEventHandler(this.entityTable_KeyUp);
             this.entityTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.entityTable_MouseDoubleClick);
             this.entityTable.MouseUp += new System.Windows.Forms.MouseEventHandler(this.entityTable_MouseUp);
-            //
+            // 
             // deselectEntityTableButton
-            //
+            // 
             this.deselectEntityTableButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deselectEntityTableButton.Location = new System.Drawing.Point(537, 2);
             this.deselectEntityTableButton.Name = "deselectEntityTableButton";
@@ -248,9 +248,9 @@ namespace LevelInspector
             this.deselectEntityTableButton.Text = "deselect";
             this.deselectEntityTableButton.UseVisualStyleBackColor = true;
             this.deselectEntityTableButton.Click += new System.EventHandler(this.deselectButton_Click);
-            //
+            // 
             // entityTableCheckbox
-            //
+            // 
             this.entityTableCheckbox.AutoSize = true;
             this.entityTableCheckbox.Checked = true;
             this.entityTableCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -261,9 +261,9 @@ namespace LevelInspector
             this.entityTableCheckbox.Text = "Enabled";
             this.entityTableCheckbox.UseVisualStyleBackColor = true;
             this.entityTableCheckbox.CheckedChanged += new System.EventHandler(this.entityTableCheckbox_CheckedChanged);
-            //
+            // 
             // connect9EntityCheckbox
-            //
+            // 
             this.connect9EntityCheckbox.AutoSize = true;
             this.connect9EntityCheckbox.Checked = true;
             this.connect9EntityCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -274,9 +274,9 @@ namespace LevelInspector
             this.connect9EntityCheckbox.Text = "walls and waypoints";
             this.connect9EntityCheckbox.UseVisualStyleBackColor = true;
             this.connect9EntityCheckbox.CheckedChanged += new System.EventHandler(this.connect9Checkbox_CheckedChanged);
-            //
+            // 
             // entityTableInfo
-            //
+            // 
             this.entityTableInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.entityTableInfo.Location = new System.Drawing.Point(167, 8);
             this.entityTableInfo.Name = "entityTableInfo";
@@ -284,9 +284,9 @@ namespace LevelInspector
             this.entityTableInfo.TabIndex = 5;
             this.entityTableInfo.Text = "------------";
             this.entityTableInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //
+            // 
             // columnTab
-            //
+            // 
             this.columnTab.Controls.Add(this.editColumnButton);
             this.columnTab.Controls.Add(this.deselectColumnsButton);
             this.columnTab.Controls.Add(this.label3);
@@ -297,13 +297,13 @@ namespace LevelInspector
             this.columnTab.Location = new System.Drawing.Point(4, 22);
             this.columnTab.Name = "columnTab";
             this.columnTab.Padding = new System.Windows.Forms.Padding(3);
-            this.columnTab.Size = new System.Drawing.Size(658, 595);
+            this.columnTab.Size = new System.Drawing.Size(626, 595);
             this.columnTab.TabIndex = 1;
             this.columnTab.Text = "Columns";
             this.columnTab.UseVisualStyleBackColor = true;
-            //
+            // 
             // editColumnButton
-            //
+            // 
             this.editColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editColumnButton.Enabled = false;
             this.editColumnButton.Location = new System.Drawing.Point(500, 2);
@@ -313,9 +313,9 @@ namespace LevelInspector
             this.editColumnButton.Text = "edit";
             this.editColumnButton.UseVisualStyleBackColor = true;
             this.editColumnButton.Click += new System.EventHandler(this.editColumnButton_Click);
-            //
+            // 
             // deselectColumnsButton
-            //
+            // 
             this.deselectColumnsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deselectColumnsButton.Location = new System.Drawing.Point(581, 2);
             this.deselectColumnsButton.Name = "deselectColumnsButton";
@@ -324,18 +324,18 @@ namespace LevelInspector
             this.deselectColumnsButton.Text = "deselect";
             this.deselectColumnsButton.UseVisualStyleBackColor = true;
             this.deselectColumnsButton.Click += new System.EventHandler(this.deselectColumnsButton_Click);
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(246, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "doubleclick jumps to block texture record";
-            //
+            // 
             // highlightColumnsCheckbox
-            //
+            // 
             this.highlightColumnsCheckbox.AutoSize = true;
             this.highlightColumnsCheckbox.Checked = true;
             this.highlightColumnsCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -346,9 +346,9 @@ namespace LevelInspector
             this.highlightColumnsCheckbox.Text = "highlight selection on map";
             this.highlightColumnsCheckbox.UseVisualStyleBackColor = true;
             this.highlightColumnsCheckbox.CheckedChanged += new System.EventHandler(this.highlightColumnsCheckbox_CheckedChanged);
-            //
+            // 
             // columnTableInfo
-            //
+            // 
             this.columnTableInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.columnTableInfo.Location = new System.Drawing.Point(211, 8);
             this.columnTableInfo.Name = "columnTableInfo";
@@ -356,9 +356,9 @@ namespace LevelInspector
             this.columnTableInfo.TabIndex = 9;
             this.columnTableInfo.Text = "------------";
             this.columnTableInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //
+            // 
             // columnTableCheckbox
-            //
+            // 
             this.columnTableCheckbox.AutoSize = true;
             this.columnTableCheckbox.Checked = true;
             this.columnTableCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -369,11 +369,11 @@ namespace LevelInspector
             this.columnTableCheckbox.Text = "Enabled";
             this.columnTableCheckbox.UseVisualStyleBackColor = true;
             this.columnTableCheckbox.CheckedChanged += new System.EventHandler(this.columnTableCheckbox_CheckedChanged);
-            //
+            // 
             // columnTable
-            //
-            this.columnTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.columnTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.columnTable.HideSelection = false;
             this.columnTable.Location = new System.Drawing.Point(0, 28);
@@ -387,9 +387,9 @@ namespace LevelInspector
             this.columnTable.KeyUp += new System.Windows.Forms.KeyEventHandler(this.columnTable_KeyUp);
             this.columnTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.columnTable_MouseDoubleClick);
             this.columnTable.MouseUp += new System.Windows.Forms.MouseEventHandler(this.columnTable_MouseUp);
-            //
+            // 
             // blockTexTab
-            //
+            // 
             this.blockTexTab.Controls.Add(this.cubePreviewTopPanel);
             this.blockTexTab.Controls.Add(this.cubePreviewBottomPanel);
             this.blockTexTab.Controls.Add(this.editBlockTexButton);
@@ -401,13 +401,13 @@ namespace LevelInspector
             this.blockTexTab.Controls.Add(this.blockTexTable);
             this.blockTexTab.Location = new System.Drawing.Point(4, 22);
             this.blockTexTab.Name = "blockTexTab";
-            this.blockTexTab.Size = new System.Drawing.Size(658, 595);
+            this.blockTexTab.Size = new System.Drawing.Size(626, 595);
             this.blockTexTab.TabIndex = 2;
             this.blockTexTab.Text = "Block Textures";
             this.blockTexTab.UseVisualStyleBackColor = true;
-            //
+            // 
             // cubePreviewTopPanel
-            //
+            // 
             this.cubePreviewTopPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cubePreviewTopPanel.Controls.Add(this.cubePreviewTopPicture);
             this.cubePreviewTopPanel.Location = new System.Drawing.Point(427, 363);
@@ -415,17 +415,17 @@ namespace LevelInspector
             this.cubePreviewTopPanel.Size = new System.Drawing.Size(200, 200);
             this.cubePreviewTopPanel.TabIndex = 16;
             this.cubePreviewTopPanel.Visible = false;
-            //
+            // 
             // cubePreviewTopPicture
-            //
+            // 
             this.cubePreviewTopPicture.Location = new System.Drawing.Point(3, 3);
             this.cubePreviewTopPicture.Name = "cubePreviewTopPicture";
             this.cubePreviewTopPicture.Size = new System.Drawing.Size(194, 194);
             this.cubePreviewTopPicture.TabIndex = 0;
             this.cubePreviewTopPicture.TabStop = false;
-            //
+            // 
             // cubePreviewBottomPanel
-            //
+            // 
             this.cubePreviewBottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cubePreviewBottomPanel.Controls.Add(this.cubePreviewBottomPicture);
             this.cubePreviewBottomPanel.Location = new System.Drawing.Point(427, 157);
@@ -433,17 +433,17 @@ namespace LevelInspector
             this.cubePreviewBottomPanel.Size = new System.Drawing.Size(200, 200);
             this.cubePreviewBottomPanel.TabIndex = 16;
             this.cubePreviewBottomPanel.Visible = false;
-            //
+            // 
             // cubePreviewBottomPicture
-            //
+            // 
             this.cubePreviewBottomPicture.Location = new System.Drawing.Point(3, 3);
             this.cubePreviewBottomPicture.Name = "cubePreviewBottomPicture";
             this.cubePreviewBottomPicture.Size = new System.Drawing.Size(194, 194);
             this.cubePreviewBottomPicture.TabIndex = 0;
             this.cubePreviewBottomPicture.TabStop = false;
-            //
+            // 
             // editBlockTexButton
-            //
+            // 
             this.editBlockTexButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editBlockTexButton.Enabled = false;
             this.editBlockTexButton.Location = new System.Drawing.Point(500, 2);
@@ -453,18 +453,18 @@ namespace LevelInspector
             this.editBlockTexButton.Text = "edit";
             this.editBlockTexButton.UseVisualStyleBackColor = true;
             this.editBlockTexButton.Click += new System.EventHandler(this.editBlockTexButton_Click);
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(252, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "doubleclick shows block textures";
-            //
+            // 
             // deselectBlockTexButton
-            //
+            // 
             this.deselectBlockTexButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deselectBlockTexButton.Location = new System.Drawing.Point(581, 2);
             this.deselectBlockTexButton.Name = "deselectBlockTexButton";
@@ -473,9 +473,9 @@ namespace LevelInspector
             this.deselectBlockTexButton.Text = "deselect";
             this.deselectBlockTexButton.UseVisualStyleBackColor = true;
             this.deselectBlockTexButton.Click += new System.EventHandler(this.deselectBlockTexButton_Click);
-            //
+            // 
             // highlightBlockTexCheckbox
-            //
+            // 
             this.highlightBlockTexCheckbox.AutoSize = true;
             this.highlightBlockTexCheckbox.Checked = true;
             this.highlightBlockTexCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -486,9 +486,9 @@ namespace LevelInspector
             this.highlightBlockTexCheckbox.Text = "highlight selection on map";
             this.highlightBlockTexCheckbox.UseVisualStyleBackColor = true;
             this.highlightBlockTexCheckbox.CheckedChanged += new System.EventHandler(this.highlightBlockTexCheckbox_CheckedChanged);
-            //
+            // 
             // blockTexTableCheckbox
-            //
+            // 
             this.blockTexTableCheckbox.AutoSize = true;
             this.blockTexTableCheckbox.Checked = true;
             this.blockTexTableCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -499,9 +499,9 @@ namespace LevelInspector
             this.blockTexTableCheckbox.Text = "Enabled";
             this.blockTexTableCheckbox.UseVisualStyleBackColor = true;
             this.blockTexTableCheckbox.CheckedChanged += new System.EventHandler(this.blockTexTableCheckbox_CheckedChanged);
-            //
+            // 
             // blockTexTableInfo
-            //
+            // 
             this.blockTexTableInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.blockTexTableInfo.Location = new System.Drawing.Point(212, 8);
             this.blockTexTableInfo.Name = "blockTexTableInfo";
@@ -509,11 +509,11 @@ namespace LevelInspector
             this.blockTexTableInfo.TabIndex = 10;
             this.blockTexTableInfo.Text = "------------";
             this.blockTexTableInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //
+            // 
             // blockTexTable
-            //
-            this.blockTexTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.blockTexTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blockTexTable.HideSelection = false;
             this.blockTexTable.Location = new System.Drawing.Point(0, 28);
@@ -527,9 +527,9 @@ namespace LevelInspector
             this.blockTexTable.KeyUp += new System.Windows.Forms.KeyEventHandler(this.blockTexTable_KeyUp);
             this.blockTexTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.blockTexTable_MouseDoubleClick);
             this.blockTexTable.MouseUp += new System.Windows.Forms.MouseEventHandler(this.blockTexTable_MouseUp);
-            //
+            // 
             // unknownTab
-            //
+            // 
             this.unknownTab.Controls.Add(this.button1);
             this.unknownTab.Controls.Add(this.label5);
             this.unknownTab.Controls.Add(this.button2);
@@ -539,13 +539,13 @@ namespace LevelInspector
             this.unknownTab.Controls.Add(this.unknownTable247264);
             this.unknownTab.Location = new System.Drawing.Point(4, 22);
             this.unknownTab.Name = "unknownTab";
-            this.unknownTab.Size = new System.Drawing.Size(658, 595);
+            this.unknownTab.Size = new System.Drawing.Size(626, 595);
             this.unknownTab.TabIndex = 3;
             this.unknownTab.Text = "unknown@247264";
             this.unknownTab.UseVisualStyleBackColor = true;
-            //
+            // 
             // button1
-            //
+            // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(500, 1);
@@ -555,9 +555,9 @@ namespace LevelInspector
             this.button1.Text = "edit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(252, 7);
             this.label5.Name = "label5";
@@ -565,9 +565,9 @@ namespace LevelInspector
             this.label5.TabIndex = 21;
             this.label5.Text = "doubleclick shows block textures";
             this.label5.Visible = false;
-            //
+            // 
             // button2
-            //
+            // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(581, 1);
             this.button2.Name = "button2";
@@ -576,9 +576,9 @@ namespace LevelInspector
             this.button2.Text = "deselect";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
-            //
+            // 
             // checkBox1
-            //
+            // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -589,9 +589,9 @@ namespace LevelInspector
             this.checkBox1.Text = "highlight selection on map";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.Visible = false;
-            //
+            // 
             // checkBox2
-            //
+            // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -602,9 +602,9 @@ namespace LevelInspector
             this.checkBox2.Text = "Enabled";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.Visible = false;
-            //
+            // 
             // unknownTableInfo
-            //
+            // 
             this.unknownTableInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.unknownTableInfo.Location = new System.Drawing.Point(212, 7);
             this.unknownTableInfo.Name = "unknownTableInfo";
@@ -612,11 +612,11 @@ namespace LevelInspector
             this.unknownTableInfo.TabIndex = 17;
             this.unknownTableInfo.Text = "------------";
             this.unknownTableInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //
+            // 
             // unknownTable247264
-            //
-            this.unknownTable247264.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.unknownTable247264.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.unknownTable247264.HideSelection = false;
             this.unknownTable247264.Location = new System.Drawing.Point(0, 27);
@@ -626,9 +626,9 @@ namespace LevelInspector
             this.unknownTable247264.TabIndex = 16;
             this.unknownTable247264.UseCompatibleStateImageBehavior = false;
             this.unknownTable247264.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.unknownTable247264_ColumnClick);
-            //
+            // 
             // unknown358222Tab
-            //
+            // 
             this.unknown358222Tab.Controls.Add(this.button3);
             this.unknown358222Tab.Controls.Add(this.label6);
             this.unknown358222Tab.Controls.Add(this.button4);
@@ -638,13 +638,13 @@ namespace LevelInspector
             this.unknown358222Tab.Controls.Add(this.unknownTable358222);
             this.unknown358222Tab.Location = new System.Drawing.Point(4, 22);
             this.unknown358222Tab.Name = "unknown358222Tab";
-            this.unknown358222Tab.Size = new System.Drawing.Size(658, 595);
+            this.unknown358222Tab.Size = new System.Drawing.Size(626, 595);
             this.unknown358222Tab.TabIndex = 4;
             this.unknown358222Tab.Text = "unknown@358222";
             this.unknown358222Tab.UseVisualStyleBackColor = true;
-            //
+            // 
             // button3
-            //
+            // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(500, 1);
@@ -654,9 +654,9 @@ namespace LevelInspector
             this.button3.Text = "edit";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(252, 7);
             this.label6.Name = "label6";
@@ -664,9 +664,9 @@ namespace LevelInspector
             this.label6.TabIndex = 28;
             this.label6.Text = "doubleclick shows block textures";
             this.label6.Visible = false;
-            //
+            // 
             // button4
-            //
+            // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(581, 1);
             this.button4.Name = "button4";
@@ -675,9 +675,9 @@ namespace LevelInspector
             this.button4.Text = "deselect";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
-            //
+            // 
             // checkBox3
-            //
+            // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -688,9 +688,9 @@ namespace LevelInspector
             this.checkBox3.Text = "highlight selection on map";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.Visible = false;
-            //
+            // 
             // checkBox4
-            //
+            // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -701,9 +701,9 @@ namespace LevelInspector
             this.checkBox4.Text = "Enabled";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.Visible = false;
-            //
+            // 
             // unknownTable358222Info
-            //
+            // 
             this.unknownTable358222Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.unknownTable358222Info.Location = new System.Drawing.Point(212, 7);
             this.unknownTable358222Info.Name = "unknownTable358222Info";
@@ -711,11 +711,11 @@ namespace LevelInspector
             this.unknownTable358222Info.TabIndex = 24;
             this.unknownTable358222Info.Text = "------------";
             this.unknownTable358222Info.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //
+            // 
             // unknownTable358222
-            //
-            this.unknownTable358222.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.unknownTable358222.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.unknownTable358222.HideSelection = false;
             this.unknownTable358222.Location = new System.Drawing.Point(0, 27);
@@ -725,9 +725,9 @@ namespace LevelInspector
             this.unknownTable358222.TabIndex = 23;
             this.unknownTable358222.UseCompatibleStateImageBehavior = false;
             this.unknownTable358222.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.unknownTable358222_ColumnClick);
-            //
+            // 
             // logTextbox
-            //
+            // 
             this.logTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logTextbox.Location = new System.Drawing.Point(581, 9);
             this.logTextbox.Multiline = true;
@@ -736,9 +736,9 @@ namespace LevelInspector
             this.logTextbox.Size = new System.Drawing.Size(284, 47);
             this.logTextbox.TabIndex = 10;
             this.logTextbox.Visible = false;
-            //
+            // 
             // dotsizeInput
-            //
+            // 
             this.dotsizeInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dotsizeInput.Location = new System.Drawing.Point(149, 28);
             this.dotsizeInput.Maximum = new decimal(new int[] {
@@ -761,27 +761,26 @@ namespace LevelInspector
             0,
             0});
             this.dotsizeInput.ValueChanged += new System.EventHandler(this.dotsizeInput_ValueChanged);
-            //
+            // 
             // mouseInfoLabel
-            //
+            // 
             this.mouseInfoLabel.AutoSize = true;
             this.mouseInfoLabel.Location = new System.Drawing.Point(232, 35);
             this.mouseInfoLabel.Name = "mouseInfoLabel";
             this.mouseInfoLabel.Size = new System.Drawing.Size(266, 13);
             this.mouseInfoLabel.TabIndex = 13;
-            this.mouseInfoLabel.Text = "left click on map shows coords, right click selects node";
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Map byte";
-            //
+            // 
             // mapByteInput
-            //
+            // 
             this.mapByteInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mapByteInput.Location = new System.Drawing.Point(17, 28);
             this.mapByteInput.Maximum = new decimal(new int[] {
@@ -804,43 +803,43 @@ namespace LevelInspector
             0,
             -2147483648});
             this.mapByteInput.ValueChanged += new System.EventHandler(this.mapByteInput_ValueChanged);
-            //
+            // 
             // dotSizeLabel
-            //
+            // 
             this.dotSizeLabel.AutoSize = true;
             this.dotSizeLabel.Location = new System.Drawing.Point(147, 12);
             this.dotSizeLabel.Name = "dotSizeLabel";
             this.dotSizeLabel.Size = new System.Drawing.Size(55, 13);
             this.dotSizeLabel.TabIndex = 3;
             this.dotSizeLabel.Text = "Dot radius";
-            //
+            // 
             // splitContainer1
-            //
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.Location = new System.Drawing.Point(0, 64);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer1.Name = "splitContainer1";
-            //
+            // 
             // splitContainer1.Panel1
-            //
+            // 
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.AutoScrollMinSize = new System.Drawing.Size(340, 0);
             this.splitContainer1.Panel1.Controls.Add(this.canvasBox);
-            //
+            // 
             // splitContainer1.Panel2
-            //
+            // 
             this.splitContainer1.Panel2.Controls.Add(this.settingsPanel);
             this.splitContainer1.Size = new System.Drawing.Size(1246, 621);
-            this.splitContainer1.SplitterDistance = 614;
+            this.splitContainer1.SplitterDistance = 602;
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 5;
-            //
+            // 
             // panel1
-            //
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.writeButton);
             this.panel1.Controls.Add(this.logTextbox);
@@ -856,9 +855,9 @@ namespace LevelInspector
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1243, 64);
             this.panel1.TabIndex = 15;
-            //
+            // 
             // writeButton
-            //
+            // 
             this.writeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.writeButton.Enabled = false;
             this.writeButton.Location = new System.Drawing.Point(1085, 14);
@@ -868,9 +867,9 @@ namespace LevelInspector
             this.writeButton.Text = "WRITE TO OUTPUT";
             this.writeButton.UseVisualStyleBackColor = true;
             this.writeButton.Click += new System.EventHandler(this.writeButton_Click);
-            //
+            // 
             // MapForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 685);

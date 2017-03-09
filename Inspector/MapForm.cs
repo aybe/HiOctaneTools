@@ -579,37 +579,6 @@ namespace LevelInspector
             draw();
         }
 
-        private void canvasBox_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button != System.Windows.Forms.MouseButtons.None)
-            {
-                infoAt(e.X, e.Y);
-            }
-        }
-
-        private void infoAt(int x, int y)
-        {
-            float blockSize = (float)zoomInput.Value;
-
-            int cx = (int)Math.Floor(x / blockSize);
-            int cy = (int)Math.Floor(y / blockSize);
-
-            mouseInfoLabel.Text = "Pos: " + cx.ToString() + "/" + cy.ToString() + ", index: " + (cx + cy * 256).ToString();
-        }
-
-        private void canvasBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            infoAt(e.X, e.Y);
-        }
-
-        private void canvasBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
-            {
-                selectNodesAt(e.X, e.Y);
-            }
-        }
-
         private void dotsizeInput_ValueChanged(object sender, EventArgs e)
         {
             draw();
@@ -839,13 +808,38 @@ namespace LevelInspector
             EntityItem item = entityTable.SelectedItems[0].Tag as EntityItem;
             editEntityItem(item);
         }
+
+        #region Canvas
+
+        private void canvasBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            var size = (float) zoomInput.Value;
+            var x = (int) Math.Floor(e.X / size);
+            var y = (int) Math.Floor(e.Y / size);
+            var index = y * Constants.LevelWidth + x;
+            var offset = Constants.TileOffset + index * Constants.TileSize;
+            mouseInfoLabel.Text = $@"X = {x}, Y = {y}, Index = {index}, Offset = {offset}";
+        }
+
+        private void canvasBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                selectNodesAt(e.X, e.Y);
+        }
+
+        private void canvasBox_MouseLeave(object sender, EventArgs e)
+        {
+            mouseInfoLabel.Text = string.Empty;
+        }
+
+        #endregion
+
         #endregion
 
         private void morphCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             draw();
         }
-
     }
 
     public class MapPointOfInterest

@@ -54,6 +54,7 @@
     <Compile Include="BlockTexForm.Designer.cs">
       <DependentUpon>BlockTexForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="EditItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
