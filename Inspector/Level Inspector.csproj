@@ -61,6 +61,9 @@
     <Compile Include="EditItemForm.Designer.cs">
       <DependentUpon>EditItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\IntegerComparer.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="MainForm.cs">

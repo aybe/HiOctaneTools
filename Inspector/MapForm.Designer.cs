@@ -29,7 +29,6 @@ namespace LevelInspector
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapForm));
-            this.canvasBox = new System.Windows.Forms.PictureBox();
             this.zoomInput = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
@@ -87,7 +86,8 @@ namespace LevelInspector
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.writeButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.canvasBox)).BeginInit();
+            this.panelEx1 = new LevelInspector.PanelEx();
+            this.canvasBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInput)).BeginInit();
             this.settingsPanel.SuspendLayout();
             this.tableTabs.SuspendLayout();
@@ -107,19 +107,9 @@ namespace LevelInspector
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.canvasBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // canvasBox
-            // 
-            this.canvasBox.Location = new System.Drawing.Point(0, 0);
-            this.canvasBox.Name = "canvasBox";
-            this.canvasBox.Size = new System.Drawing.Size(512, 320);
-            this.canvasBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.canvasBox.TabIndex = 0;
-            this.canvasBox.TabStop = false;
-            this.canvasBox.MouseLeave += new System.EventHandler(this.canvasBox_MouseLeave);
-            this.canvasBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseMove);
-            this.canvasBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseUp);
             // 
             // zoomInput
             // 
@@ -825,9 +815,7 @@ namespace LevelInspector
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.AutoScrollMinSize = new System.Drawing.Size(340, 0);
-            this.splitContainer1.Panel1.Controls.Add(this.canvasBox);
+            this.splitContainer1.Panel1.Controls.Add(this.panelEx1);
             // 
             // splitContainer1.Panel2
             // 
@@ -868,6 +856,27 @@ namespace LevelInspector
             this.writeButton.UseVisualStyleBackColor = true;
             this.writeButton.Click += new System.EventHandler(this.writeButton_Click);
             // 
+            // panelEx1
+            // 
+            this.panelEx1.AutoScroll = true;
+            this.panelEx1.Controls.Add(this.canvasBox);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(629, 621);
+            this.panelEx1.TabIndex = 0;
+            // 
+            // canvasBox
+            // 
+            this.canvasBox.Location = new System.Drawing.Point(0, 0);
+            this.canvasBox.Name = "canvasBox";
+            this.canvasBox.Size = new System.Drawing.Size(324, 265);
+            this.canvasBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.canvasBox.TabIndex = 1;
+            this.canvasBox.TabStop = false;
+            this.canvasBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseMove);
+            this.canvasBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvasBox_MouseUp);
+            // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -880,7 +889,6 @@ namespace LevelInspector
             this.Name = "MapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Level Map";
-            ((System.ComponentModel.ISupportInitialize)(this.canvasBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInput)).EndInit();
             this.settingsPanel.ResumeLayout(false);
             this.tableTabs.ResumeLayout(false);
@@ -901,19 +909,19 @@ namespace LevelInspector
             ((System.ComponentModel.ISupportInitialize)(this.dotsizeInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapByteInput)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.canvasBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox canvasBox;
         private System.Windows.Forms.NumericUpDown zoomInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel settingsPanel;
@@ -971,5 +979,7 @@ namespace LevelInspector
         private System.Windows.Forms.Label unknownTable358222Info;
         private System.Windows.Forms.ListView unknownTable358222;
         private System.Windows.Forms.CheckBox morphCheckbox;
+        private PanelEx panelEx1;
+        private System.Windows.Forms.PictureBox canvasBox;
     }
 }
